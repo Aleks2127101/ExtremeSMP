@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Extreme.SMP | Minecraft Server</title>
-
     <style>
         * {
             margin: 0;
@@ -13,154 +12,260 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: Arial, sans-serif;
-            background: #101014;
+            background: #101010;
             color: white;
+            line-height: 1.6;
         }
 
         header {
-            padding: 25px 8%;
+            background: #181818;
+            padding: 22px 8%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: #19191f;
-            border-bottom: 2px solid #e63946;
+            flex-wrap: wrap;
+            gap: 15px;
+            border-bottom: 2px solid #e32626;
         }
 
-        .logo {
-            color: #ff4655;
-            font-size: 26px;
-            font-weight: bold;
+        header h1 {
+            color: #ff3030;
+            font-size: 28px;
         }
 
         nav a {
             color: white;
             text-decoration: none;
-            margin-left: 25px;
-            transition: 0.3s;
+            margin-left: 20px;
+            font-weight: bold;
         }
 
         nav a:hover {
-            color: #ff4655;
+            color: #ff3030;
         }
 
         .hero {
-            min-height: 75vh;
+            min-height: 430px;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 30px;
-            background: radial-gradient(#502027, #101014 70%);
+            padding: 50px 20px;
+            background: linear-gradient(135deg, #200707, #101010 65%);
         }
 
-        .hero h1 {
-            font-size: 65px;
-            color: #ff4655;
-            margin-bottom: 20px;
-            text-shadow: 0 0 25px #e6394666;
+        .hero h2 {
+            font-size: clamp(38px, 7vw, 65px);
+            color: #ff3030;
+            margin-bottom: 15px;
         }
 
         .hero p {
             font-size: 20px;
-            color: #cccccc;
-            margin-bottom: 30px;
+            margin-bottom: 28px;
         }
 
         .button {
-            background: #e63946;
+            display: inline-block;
+            padding: 13px 28px;
+            background: #e32626;
             color: white;
-            padding: 15px 30px;
-            border-radius: 8px;
             text-decoration: none;
             font-weight: bold;
-            transition: 0.3s;
-        }
-
-        .button:hover {
-            background: #ff5965;
-            transform: scale(1.05);
+            border-radius: 7px;
         }
 
         section {
-            padding: 65px 10%;
+            padding: 65px 8%;
             text-align: center;
         }
 
         section h2 {
-            color: #ff4655;
             font-size: 32px;
             margin-bottom: 25px;
+            color: #ff3838;
         }
 
-        section p {
-            color: #cccccc;
-            line-height: 1.7;
+        .about p, .contact p {
+            max-width: 750px;
+            margin: auto;
+            font-size: 17px;
         }
 
-        #sklep h2 {
-            color: #ff9635;
+        .shop {
+            background: #171717;
         }
 
-        #kontakt h2 {
-            color: #35d6c5;
+        .shop h2 {
+            color: #ff9d28;
+        }
+
+        .rank-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+            max-width: 1000px;
+            margin: 35px auto 0;
+        }
+
+        .rank {
+            background: #222;
+            padding: 30px 20px;
+            border-radius: 12px;
+            border: 2px solid #444;
+            transition: transform 0.2s;
+        }
+
+        .rank:hover {
+            transform: translateY(-6px);
+        }
+
+        .rank h3 {
+            font-size: 27px;
+            margin-bottom: 12px;
+        }
+
+        .vip h3 {
+            color: #ffe34d;
+        }
+
+        .svip h3 {
+            color: #ff9d28;
+        }
+
+        .extreme h3 {
+            color: #ff3838;
+        }
+
+        .price {
+            font-size: 32px;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+
+        .duration {
+            color: #bbb;
+            margin-bottom: 20px;
+        }
+
+        .soon {
+            display: inline-block;
+            background: #444;
+            color: #ddd;
+            padding: 10px 22px;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        .shop-note {
+            margin-top: 30px;
+            color: #bbb;
+        }
+
+        .contact h2 {
+            color: #36d9d0;
         }
 
         footer {
-            background: #19191f;
-            border-top: 2px solid #e63946;
+            background: #080808;
+            padding: 22px;
             text-align: center;
-            padding: 25px;
-            color: #aaaaaa;
+            color: #888;
+            border-top: 1px solid #333;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                justify-content: center;
+                text-align: center;
+            }
+
+            nav a {
+                margin: 0 7px;
+            }
         }
     </style>
 </head>
-
 <body>
 
-<header>
-    <div class="logo">EXTREME.SMP</div>
+    <header>
+        <h1>EXTREME.SMP</h1>
+        <nav>
+            <a href="#start">Start</a>
+            <a href="#serwer">Serwer</a>
+            <a href="#sklep">Sklep</a>
+            <a href="#kontakt">Kontakt</a>
+        </nav>
+    </header>
 
-    <nav>
-        <a href="#start">Start</a>
-        <a href="#serwer">Serwer</a>
-        <a href="#sklep">Sklep</a>
-        <a href="#kontakt">Kontakt</a>
-    </nav>
-</header>
+    <main>
+        <div class="hero" id="start">
+            <h2>EXTREME.SMP</h2>
+            <p>Twoja przygoda zaczyna się właśnie tutaj!</p>
+            <a class="button" href="#serwer">DOŁĄCZ DO NAS</a>
+        </div>
 
-<div class="hero" id="start">
-    <h1>EXTREME.SMP</h1>
-    <p>Twoja przygoda zaczyna się właśnie tutaj!</p>
-    <a href="#serwer" class="button">DOŁĄCZ DO NAS</a>
-</div>
+        <section class="about" id="serwer">
+            <h2>O naszym serwerze</h2>
+            <p>
+                Witaj na Extreme.SMP! Czeka na Ciebie świat pełen przygód,
+                rywalizacji i świetnej zabawy. Dołącz do naszej społeczności
+                i zostań częścią serwera!
+            </p>
+        </section>
 
-<section id="serwer">
-    <h2>O naszym serwerze</h2>
-    <p>
-        Witaj na Extreme.SMP! Czeka na Ciebie świat
-        pełen przygód, rywalizacji i dobrej zabawy.
-    </p>
-</section>
+        <section class="shop" id="sklep">
+            <h2>SKLEP SERWEROWY</h2>
+            <p>Wybierz rangę dla siebie!</p>
 
-<section id="sklep">
-    <h2>Sklep serwerowy</h2>
-    <p>
-        Już wkrótce znajdziesz tutaj rangi VIP,
-        SVIP oraz EXTREME!
-    </p>
-</section>
+            <div class="rank-container">
 
-<section id="kontakt">
-    <h2>Kontakt</h2>
-    <p>Dołącz do naszej społeczności!</p>
-</section>
+                <div class="rank vip">
+                    <h3>VIP</h3>
+                    <p class="price">19,99 zł</p>
+                    <p class="duration">Na 30 dni</p>
+                    <span class="soon">WKRÓTCE</span>
+                </div>
 
-<footer>
-    © 2026 Extreme.SMP — Wszystkie prawa zastrzeżone.
-</footer>
+                <div class="rank svip">
+                    <h3>SVIP</h3>
+                    <p class="price">29,99 zł</p>
+                    <p class="duration">Na 30 dni</p>
+                    <span class="soon">WKRÓTCE</span>
+                </div>
+
+                <div class="rank extreme">
+                    <h3>EXTREME</h3>
+                    <p class="price">59,99 zł</p>
+                    <p class="duration">Na 30 dni</p>
+                    <span class="soon">WKRÓTCE</span>
+                </div>
+
+            </div>
+
+            <p class="shop-note">
+                Sklep jest w trakcie przygotowywania. Możliwość zakupu już wkrótce!
+            </p>
+        </section>
+
+        <section class="contact" id="kontakt">
+            <h2>Kontakt</h2>
+            <p>
+                Masz pytania? Dołącz do naszej społeczności na Discordzie!
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        © 2026 Extreme.SMP | Wszelkie prawa zastrzeżone
+    </footer>
 
 </body>
 </html>
